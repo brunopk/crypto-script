@@ -4,7 +4,7 @@ Project to manage personal crypto information using Google App Script, Google Sp
 
 ## Requirements
 
-- Node version: v16.17.0 LTS
+- Node version: v 16.17.0 LTS
 - [Clasp](https://developers.google.com/apps-script/guides/clasp)
 
 ## Basic usage
@@ -21,7 +21,8 @@ This is just for testing or personal use. For more advanced usage, read [this](h
 
 To configure the activator:
 
-![image](https://user-images.githubusercontent.com/6526093/186764408-802cbe7d-0951-4bb4-97b0-3709ac37b602.png)
+<img width="1438" alt="screenshot_3" src="https://user-images.githubusercontent.com/6526093/186764687-1fdcf48b-7691-4872-8a0a-4b557e8c95c9.png">
+
 
 
 
