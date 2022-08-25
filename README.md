@@ -21,10 +21,7 @@ This is just for testing or personal use. For more advanced usage, read [this](h
 
 To configure the activator:
 
-<img width="1438" alt="screenshot_3" src="https://user-images.githubusercontent.com/6526093/186764687-1fdcf48b-7691-4872-8a0a-4b557e8c95c9.png">
-
-
-
+<img width="800" alt="screenshot_3" src="https://user-images.githubusercontent.com/6526093/186764687-1fdcf48b-7691-4872-8a0a-4b557e8c95c9.png">
 
 
 ## Useful links
