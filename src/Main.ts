@@ -137,7 +137,9 @@ function processInsertedRowOnSwapSheet() {
 function processInsertedRow() {
   const sheet = SpreadsheetApp.getActiveSheet()
   const sheetName = sheet.getName()
+  
   console.log(`New row inserted on sheet '${sheetName}'.`)
+  console.log('Main')
 
   switch(sheetName) {
     case "Swap":

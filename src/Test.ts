@@ -1,3 +1,6 @@
+import { Snapshoot } from './Types'
+import { TEST1 } from './Constants'
+
 function testOpenSpreadSheetUrl() {
   const spreadSheet = SpreadsheetApp.openById("1Y6qy6BGG52oWgFhTmqo59DhXnrPuLmZuDWiRsTzUJiI")
   console.log(spreadSheet.getDataRange().getValues())
@@ -14,6 +17,7 @@ function testCompression() {
   console.log(`Base 64 encoded version of compressed string: ${compressedBlobAsbase64}`)
 }
 
-function test() {
-  return {}
+function test(): Snapshoot {
+  console.log(TEST1)
+  return { data: 1 }
 }

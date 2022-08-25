@@ -1,0 +1,19 @@
+{
+  "name": "crypto-app-script",
+  "version": "1.0.0",
+  "description": "Project to manage personal crypto information using Google App Script, Google Spread Sheets and Google Forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunopk/crypto-app-script.git"
+  },
+  "author": "Bruno Piaggio",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/brunopk/crypto-app-script/issues"
+  },
+  "homepage": "https://github.com/brunopk/crypto-app-script#readme"
+}
