@@ -1,9 +1,14 @@
-const MOVEMENT_ASSOCIATED_SHEET = "Movimiento"
-
 type Movement = {
   crypto1: string
-}  
-
-function handleMovement(movement: Movement){
-  console.log('Handler for Movements called')
 }
+
+class MovementHandler extends BaseFormHandler<Movement> {
+  processData(data: Movement): void {
+    throw new Error("Method not implemented.")
+  }
+}
+
+if (typeof formHandler === 'undefined')
+formHandler = {}
+
+formHandler["Movimiento"] = new MovementHandler()

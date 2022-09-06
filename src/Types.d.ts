@@ -1,8 +1,10 @@
-
+declare let formHandler: { [associatedSheetName: string]: Main.Form.Handler }
 
 declare namespace Main {
   namespace Form {
-    type FormHandler = (data: any, asd: any) => void
+    interface Handler {
+      run: () => void
+    }
   }
   namespace Sheets {
     type RowDef = {

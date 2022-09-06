@@ -129,7 +129,9 @@ function processInsertedRowOnSwapSheet() {
 function main() {
   const sheet = SpreadsheetApp.getActiveSheet()
   const sheetName = sheet.getName()
-  const data = getFormData(sheetName)
-  const handler = getFormHandler(sheetName)
-  handler(data)
+
+  if (!(sheetName in Object.keys(formHandler)))
+    throw new Error(`There's no handler defined to process inserted rows on sheet '${sheetName}'`)
+
+  formHandler[sheetName].run()
 }
