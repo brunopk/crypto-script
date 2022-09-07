@@ -1,10 +1,10 @@
-abstract class BaseFormHandler<T extends object> implements Main.Form.Handler {   
-  protected rowDef: Main.Sheets.RowDef
+abstract class BaseFormHandler<T extends Form.Mapping, S extends Form.Data<T>> implements Form.Handler {   
+  protected mapping: T
 
   run() {
-    const data = readLastInsertedRow(this.rowDef) as T
+    const data = readLastInsertedRow(this.mapping) as S
     this.processData(data)
   }
 
-  abstract processData(data: T): void
+  abstract processData(data: S): void
 }

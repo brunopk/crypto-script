@@ -1,11 +1,22 @@
-declare let formHandler: { [associatedSheetName: string]: Main.Form.Handler }
+declare let formHandler: { [associatedSheetName: string]: Form.Handler }
+
+declare namespace Form {
+  type Mapping = {
+    [field: string]: number
+  }
+
+  type Data<T extends Mapping> = {
+    [Property in keyof T]: number | string | Date
+  }
+
+  interface Handler {
+    run: () => void
+  }
+}
+
 
 declare namespace Main {
-  namespace Form {
-    interface Handler {
-      run: () => void
-    }
-  }
+  
   namespace Sheets {
     type RowDef = {
       [column: string]: {

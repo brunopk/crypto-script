@@ -14,13 +14,13 @@ function addRow(spreadSheetId: string, sheetName: string, row: any[]): number {
 }
 
 /**
- * Read the last inserted row in the active sheet and for each column at index `rowDefinition[<columnX>].columnIndex`, 
- * extract its data and puts it in `data[rowDefinition[<columnX>].columnName]`
- * @param def 
+ * Read the last inserted row in the active sheet and for each column at index `mapping[<columnX>]`, 
+ * extract its data and puts it in `data[mapping[<columnX>]]`
+ * @param mapping 
  * @returns `data`
  */
-function readLastInsertedRow(rowDef: Main.Sheets.RowDef): object {
+function readLastInsertedRow(mapping: Form.Mapping): Form.Data<any> {
   // TODO: seguir ACA
-  return {}
+  return {hjk: 9}
 }
 
