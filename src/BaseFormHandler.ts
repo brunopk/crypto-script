@@ -1,10 +1,15 @@
-abstract class BaseFormHandler<T extends Form.Mapping, S extends Form.Data<T>> implements Form.Handler {   
-  protected mapping: T
+abstract class BaseFormHandler<T extends Form.Data> implements Form.Handler {   
+  private _mapping: Form.ColumnMapping<T>
+
+  constructor(mapping: Form.ColumnMapping<T>) {
+    this._mapping = mapping
+  }
 
   run() {
-    const data = readLastInsertedRow(this.mapping) as S
+    const data = readLastInsertedRow(this._mapping) as T
     this.processData(data)
   }
 
-  abstract processData(data: S): void
+  abstract processData(data: T): void
+
 }

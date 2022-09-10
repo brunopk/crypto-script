@@ -1,12 +1,13 @@
 declare let formHandler: { [associatedSheetName: string]: Form.Handler }
 
 declare namespace Form {
-  type Mapping = {
-    [field: string]: number
+
+  type ColumnMapping<T> = {
+    [Property in keyof T]: number
   }
 
-  type Data<T extends Mapping> = {
-    [Property in keyof T]: number | string | Date
+  type Data = {
+    [field: string]: number | string | Date
   }
 
   interface Handler {

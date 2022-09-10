@@ -19,7 +19,7 @@ function addRow(spreadSheetId: string, sheetName: string, row: any[]): number {
  * @param mapping 
  * @returns `data`
  */
-function readLastInsertedRow(mapping: Form.Mapping): Form.Data<any> {
+function readLastInsertedRow<T extends Form.Data>(mapping: Form.ColumnMapping<T>): object {
   // TODO: seguir ACA
   return {hjk: 9}
 }

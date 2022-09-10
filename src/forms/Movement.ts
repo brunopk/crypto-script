@@ -1,13 +1,23 @@
-type MovementMapping = {
-  a: number
+declare namespace Movement {
+  type Type = {
+    a: string,
+  }
+
+  let mapping: Form.ColumnMapping<Type>
 }
 
-type Movement = {
-  a: string,
-}
 
-class MovementHandler extends BaseFormHandler<MovementMapping, Movement> {
-  processData(data: Movement): void {
+
+Movement.mapping = { a: 1}
+
+
+class MovementHandler extends BaseFormHandler<Movement.Type> {
+
+  constructor() {
+    super(Movement.mapping)
+  }
+
+  processData(data: Movement.Type): void {
     throw new Error("Method not implemented.")
   }
 }
