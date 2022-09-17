@@ -30,3 +30,7 @@ function getLastRow<T extends Form.Data>(mapping: Form.ColumnMapping<T>): object
   return result
 }
 
+function getLink(spreadSheetId: string, rowNumber: number): string {
+  // TODO:
+  throw new Error("Not implemented")
+}
