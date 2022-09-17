@@ -42,7 +42,7 @@ class BuyHandler extends BaseFormHandler<Buy.Data> {
     this.snapshot.lastEvent = {
       eventDate: data.date,
       summary: Buy.EVENT_SUMMARY_TEMPLATE.replace("%COIN%", data.coin),
-      url: getLink(Buy.SHEET_ID, this.lastInsertedRow)
+      url: getLinkToLastRow()
     }
   }
 }

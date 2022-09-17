@@ -29,7 +29,6 @@ type Snapshot = {
   lastEvent: {
     eventDate: Date,
     summary: string,
-    description?: string,
     url?: string
   },
   data: {

@@ -15,22 +15,26 @@ function addRow(spreadSheetId: string, sheetName: string, row: any[]): number {
 
 /**
  * Read the last inserted row in the active sheet.
- * @param mapping
- * @returns Returns an object `data` for which `data[mapping[x]]` contains the value at column `x` for the last inserted row.
+ * @param mapping indicates to which column is associated each field 
+ * @returns Returns an object `data` for which `data[field]` contains the value for `field` in column `n` (being `mapping[field] = n`).
  */
 function getLastRow<T extends Form.Data>(mapping: Form.ColumnMapping<T>): object {
-  const result = {}
+  const data = {}
   const range = SpreadsheetApp.getActiveRange()
   for (let field in mapping) {
     // to string conversion to avoid TypeScript complaining with 'Type 'Extract<keyof T, string>' cannot be used to index type '{}'' 
     const fieldName = field.toString()
     const cell = range.getCell(1, mapping[fieldName]);
-    result[fieldName] = cell.getValue()
+    data[fieldName] = cell.getValue()
   }
-  return result
+  return data
 }
 
-function getLink(spreadSheetId: string, rowNumber: number): string {
-  // TODO:
-  throw new Error("Not implemented")
+function getLinkToLastRow(): string {
+  const range = SpreadsheetApp.getActiveRange()
+  const rowNumber = range.getRow();
+  const activeSpreadSheet = SpreadsheetApp.getActiveSpreadsheet()
+  const spreadSheetId = activeSpreadSheet.getId()
+  const sheetId = activeSpreadSheet.getSheetId()
+  return `https://docs.google.com/spreadsheets/d/${spreadSheetId}/edit#gid=${sheetId}&range=A${rowNumber}`
 }

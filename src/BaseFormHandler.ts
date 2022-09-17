@@ -12,11 +12,6 @@ abstract class BaseFormHandler<T extends Form.Data> implements Form.Handler {
     return this._snapshot;
   }
 
-  protected get lastInsertedRow(): number {
-    // TODO:
-    throw new Error("Not implemented")
-  }
-  
   run() {
     const data = getLastRow(this._mapping) as T
     this.processData(data)
