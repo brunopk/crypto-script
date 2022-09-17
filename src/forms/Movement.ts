@@ -1,23 +1,25 @@
 declare namespace Movement {
-  type Type = {
-    a: string,
+  type Data = {
+    a: string
   }
+  let mapping: Form.ColumnMapping<Data>
+  let ASSOCIATED_SHEET: string
+}
 
-  let mapping: Form.ColumnMapping<Type>
+namespace Movement {
+  ASSOCIATED_SHEET = "Movimiento"
+  mapping = {a: 3}
 }
 
 
 
-Movement.mapping = { a: 1}
-
-
-class MovementHandler extends BaseFormHandler<Movement.Type> {
+class MovementHandler extends BaseFormHandler<Movement.Data> {
 
   constructor() {
     super(Movement.mapping)
   }
 
-  processData(data: Movement.Type): void {
+  processData(data: Movement.Data): void {
     throw new Error("Method not implemented.")
   }
 }
@@ -25,4 +27,4 @@ class MovementHandler extends BaseFormHandler<Movement.Type> {
 if (typeof formHandler === 'undefined')
   formHandler = {}
 
-formHandler["Movimiento"] = new MovementHandler()
+formHandler[Movement.ASSOCIATED_SHEET] = new MovementHandler()

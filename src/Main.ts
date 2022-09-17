@@ -134,4 +134,5 @@ function main() {
     throw new Error(`There's no handler defined to process inserted rows on sheet '${sheetName}'`)
 
   formHandler[sheetName].run()
+  // console.log(readLastInsertedRow({money: 3, quantity: 4}))
 }

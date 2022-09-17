@@ -16,11 +16,17 @@ function addRow(spreadSheetId: string, sheetName: string, row: any[]): number {
 /**
  * Read the last inserted row in the active sheet and for each column at index `mapping[<columnX>]`, 
  * extract its data and puts it in `data[mapping[<columnX>]]`
- * @param mapping 
+ * @param mapping
  * @returns `data`
  */
 function readLastInsertedRow<T extends Form.Data>(mapping: Form.ColumnMapping<T>): object {
-  // TODO: seguir ACA
-  return {hjk: 9}
+  const result = {}
+  const range = SpreadsheetApp.getActiveRange()
+  for (let field in mapping) {
+    const fieldName = field.toString()
+    const cell = range.getCell(1, mapping[fieldName]);
+    result[fieldName] = cell.getValue()
+  }
+  return result
 }
 
