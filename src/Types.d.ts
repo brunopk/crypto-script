@@ -1,4 +1,10 @@
-declare let formHandler: { [associatedSheetName: string]: Form.Handler }
+declare enum Coins {
+  ADA = "ADA",
+  BUSD = "BUSD",
+  ETH = "ETH"
+}
+
+declare let FormHandler: { [associatedSheetName: string]: Form.Handler }
 
 declare namespace Form {
 
@@ -15,6 +21,29 @@ declare namespace Form {
   }
 }
 
+type Snapshot = {
+  createdAt: Date
+  scriptVersion: string
+  totalInvestment: number
+  lastEvent: {
+    eventDate: Date,
+    summary: string,
+    description: string
+    note?: string 
+  },
+  prices: {
+    [crypto: string]: {
+      value: number,
+      obtainedFrom: string
+    }
+  }
+  data: {
+    [crypto: string]: {
+      total: number,
+      totalInvested: number
+    }
+  }
+}
 
 declare namespace Main {
   
@@ -23,31 +52,6 @@ declare namespace Main {
       [column: string]: {
         columnName: string
         columnIndex: number
-      }
-    }
-  }
-  namespace Snapshot {
-    type Snapshot = {
-      createdAt: Date
-      scriptVersion: string
-      totalInvestment: number
-      lastEvent: {
-        eventDate: Date,
-        summary: string,
-        description: string
-        note?: string 
-      },
-      prices: {
-        [crypto: string]: {
-          value: number,
-          obtainedFrom: string
-        }
-      }
-      data: {
-        [crypto: string]: {
-          total: number,
-          totalInvested: number
-        }
       }
     }
   }

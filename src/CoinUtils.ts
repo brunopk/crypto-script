@@ -1,10 +1,3 @@
-enum Coins {
-  ADA = "ADA",
-  BUSD = "BUSD",
-  ETH = "ETH"
-}
-
-
 /**
  * Returns the price of the coin in USD at the given date.
  * @param date

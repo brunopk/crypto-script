@@ -3,11 +3,11 @@ declare namespace Movement {
     a: string
   }
   let mapping: Form.ColumnMapping<Data>
-  let ASSOCIATED_SHEET: string
+  let SHEET_NAME: string
 }
 
 namespace Movement {
-  ASSOCIATED_SHEET = "Movimiento"
+  SHEET_NAME = "Movimiento"
   mapping = {a: 3}
 }
 
@@ -24,7 +24,7 @@ class MovementHandler extends BaseFormHandler<Movement.Data> {
   }
 }
 
-if (typeof formHandler === 'undefined')
-  formHandler = {}
+if (typeof FormHandler === 'undefined')
+  FormHandler = {}
 
-formHandler[Movement.ASSOCIATED_SHEET] = new MovementHandler()
+FormHandler[Movement.SHEET_NAME] = new MovementHandler()

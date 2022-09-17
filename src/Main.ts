@@ -130,9 +130,9 @@ function main() {
   const sheet = SpreadsheetApp.getActiveSheet()
   const sheetName = sheet.getName()
 
-  if (!(sheetName in Object.keys(formHandler)))
+  if (!(sheetName in Object.keys(FormHandler)))
     throw new Error(`There's no handler defined to process inserted rows on sheet '${sheetName}'`)
 
-  formHandler[sheetName].run()
+  FormHandler[sheetName].run()
   // console.log(readLastInsertedRow({money: 3, quantity: 4}))
 }
