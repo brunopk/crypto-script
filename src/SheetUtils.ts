@@ -23,9 +23,8 @@ function readLastInsertedRow<T extends Form.Data>(mapping: Form.ColumnMapping<T>
   const result = {}
   const range = SpreadsheetApp.getActiveRange()
   for (let field in mapping) {
-    const fieldName = field.toString()
-    const cell = range.getCell(1, mapping[fieldName]);
-    result[fieldName] = cell.getValue()
+    const cell = range.getCell(1, mapping[field]);
+    result[field] = cell.getValue()
   }
   return result
 }
