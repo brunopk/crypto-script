@@ -9,7 +9,7 @@ function addRow(spreadSheetId: string, sheetName: string, row: any[]): number {
   const spreadSheet = SpreadsheetApp.openById(spreadSheetId)
   spreadSheet.setActiveSheet(spreadSheet.getSheetByName(sheetName)!)
   spreadSheet.appendRow(row)
-  console.log(`New row added on the sheet '${sheetName}' within the spread sheet with ID '${spreadSheetId}'.`)
+  console.log(`New row added on the sheet '${sheetName}' within the spread sheet '${spreadSheetId}'.`)
   return spreadSheet.getDataRange().getLastRow()
 }
 
