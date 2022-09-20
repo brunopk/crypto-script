@@ -14,9 +14,9 @@ abstract class BaseFormHandler<T extends Form.Data> implements Form.Handler {
 
   run() {
     const data = getLastRow(this._mapping) as T
-    this.processData(data)
+    this.process(data)
   }
 
-  abstract processData(data: T): void
+  abstract process(data: T): void
 
 }

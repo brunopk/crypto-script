@@ -5,10 +5,10 @@ abstract class BaseSheetHandler {
     this._snapshot = snapshot
   }
 
-  writeSnapshot() {
-    this.processSnapshot(this._snapshot)
+  run() {
+    this.write(this._snapshot)
   }
 
-  abstract processSnapshot(snapshot: Snapshot): void
+  abstract write(snapshot: Snapshot): void
 
 }
