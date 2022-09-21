@@ -40,7 +40,7 @@ Snapshots can be thought as the database of the script. Whenever a crypto is mov
 
 ## Obtaining Google Spread Sheet IDs
 
-Spread sheet IDs can be obtained after opening the spread sheet through Google Drive as indicated in [this]() image.
+Spread sheet IDs can be obtained after opening the spread sheet through Google Drive as indicated in [this](https://github.com/brunopk/crypto-script/blob/draft/doc/screenshot_1.png) image.
 
 ## Useful links
 
