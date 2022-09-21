@@ -1,4 +1,4 @@
-# Crypto app script
+# Crypto script
 
 Project to manage personal crypto information using Google App Script, Google Spread Sheets and Google Forms
 
@@ -20,9 +20,7 @@ Project to manage personal crypto information using Google App Script, Google Sp
 
 This is just for testing or personal use. For more advanced usage, read [this](https://github.com/brunopk/crypto-app-script/blob/main/doc/deployments.md) documentation.
 
-To configure the activator:
-
-<img width="800" alt="screenshot_3" src="https://user-images.githubusercontent.com/6526093/186764687-1fdcf48b-7691-4872-8a0a-4b557e8c95c9.png">
+To configure the activator do as explained [here](https://user-images.githubusercontent.com/6526093/186764687-1fdcf48b-7691-4872-8a0a-4b557e8c95c9.png)
 
 
 ## Configuring constants
