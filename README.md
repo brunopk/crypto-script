@@ -18,7 +18,7 @@ Project to manage personal crypto information using Google App Script, Google Sp
 7. Complete the form.
 8. See results on Google Spread Sheets
 
-This is just for testing or personal use. For more advanced usage, read [this](https://github.com/brunopk/crypto-app-script/blob/main/doc/deployments.md) documentation. Configuration of activators that triggers Google Scripts can be done as explained [here](https://user-images.githubusercontent.com/6526093/186764687-1fdcf48b-7691-4872-8a0a-4b557e8c95c9.png).
+This is just for testing or personal use. For more advanced usage, read [this](https://github.com/brunopk/crypto-app-script/blob/main/doc/deployments.md) documentation. Configuration of activators to fire Google Scripts can be done as explained [here](https://user-images.githubusercontent.com/6526093/186764687-1fdcf48b-7691-4872-8a0a-4b557e8c95c9.png).
 
 
 ## Configuring constants
