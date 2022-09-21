@@ -2,6 +2,8 @@ declare let FormHandler: { [associatedSheetName: string]: Form.Handler }
 
 declare let snapshot: Snapshot
 
+declare let CHARS: string
+
 declare enum Coin {
   ADA = "ADA",
   BUSD = "BUSD",

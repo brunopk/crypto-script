@@ -38,3 +38,17 @@ function getLinkToLastRow(): string {
   const sheetId = activeSpreadSheet.getSheetId()
   return `https://docs.google.com/spreadsheets/d/${spreadSheetId}/edit#gid=${sheetId}&range=A${rowNumber}`
 }
+
+function setCellColor(spreadSheetId: string, sheetName: string, rowNumber: number, columnNumber: number, color: string) {
+  const spreadSheet = SpreadsheetApp.openById(spreadSheetId);
+  const sheet = spreadSheet.getSheetByName(sheetName);
+  
+  if (sheet == null) {
+    throw new Error(`Sheet '${sheetName}' not found within the spread sheet '${spreadSheetId}'`)
+  }
+
+  const range = sheet.getRange(`${CHARS[columnNumber - 1]}${rowNumber}`)
+
+  sheet.setCurrentCell(range)
+  sheet.getCurrentCell()!.setFontColor(color)
+}
