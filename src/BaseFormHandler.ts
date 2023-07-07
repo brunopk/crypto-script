@@ -5,7 +5,7 @@ abstract class BaseFormHandler<T extends FormSheet> implements FormHandler {
 
   constructor(mapping: ColumnMapping<T>) {
     this._mapping = mapping
-    this._snapshot = getLastSnapshot()
+    // this._snapshot = getLastSnapshot()
   }
 
   protected get snapshot(): Snapshot {

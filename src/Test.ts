@@ -1,6 +1,3 @@
-import { Snapshoot } from './Types'
-import { TEST1 } from './Constants'
-
 function testOpenSpreadSheetUrl() {
   const spreadSheet = SpreadsheetApp.openById("1Y6qy6BGG52oWgFhTmqo59DhXnrPuLmZuDWiRsTzUJiI")
   console.log(spreadSheet.getDataRange().getValues())
@@ -17,7 +14,20 @@ function testCompression() {
   console.log(`Base 64 encoded version of compressed string: ${compressedBlobAsbase64}`)
 }
 
-function test(): Snapshoot {
-  console.log(TEST1)
-  return { data: 1 }
+// TODO: try adding coins (from enum) and reading them correctly as Snapshot object
+function testSaveSnapshot() {
+  const snapshot: Snapshot = {
+    createdAt: new Date(), 
+    lastEvent: {
+      eventDate: new Date(),
+      type: EventType.BUY,
+      summary: 'but 10 ADA',
+    },
+    data: {
+      totalInvestment: 10, 
+      prices: {}, 
+      coins: {}
+    } 
+  }
+  saveSnapshot(snapshot)
 }

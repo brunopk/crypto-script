@@ -15,17 +15,7 @@ declare let FormHandler: { [associatedSheetName: string]: FormHandler }
 
 declare let CHARS: string
 
-declare let SNAPSHOTS_SPREADSHEET_ID: string
-
-declare let SNAPSHOTS_SPREADSHEET_NAME: string
-
-declare enum Coin {
-  ADA = "ADA",
-  BUSD = "BUSD",
-  ETH = "ETH"
-}
-
-type FormSheet = RowDefinition
+declare type FormSheet = RowDefinition
 
 type RowDefinition = {
   [name: string]: number | string | Date
@@ -35,11 +25,12 @@ type ColumnMapping<T> = {
   [Property in keyof T]: number
 }
 
+// TODO: it should contain where is the coin (example: metamask, binance, etc, data.coins['ADA'] could be an array)
 type Snapshot = {
   createdAt: Date
-  scriptVersion: string
   lastEvent: {
     eventDate: Date,
+    type: EventType,
     summary: string,
     url?: string
   },
