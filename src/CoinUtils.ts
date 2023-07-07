@@ -11,7 +11,7 @@ function getPrice(date: Date): number {
   } 
   const response = 
     UrlFetchApp.fetch(`https://rest.coinapi.io/v1/exchangerate/BTC/USD?time=${date.toISOString()}`, params)
-  const jsonResponse: Main.ExternalAPIs.CoinAPI.ExchangeRate.GetSpecificRateResponse = 
+  const jsonResponse: ExternalAPIs.CoinAPI.ExchangeRate.GetSpecificRateResponse = 
     JSON.parse(response.getContentText())
   
     return jsonResponse.rate

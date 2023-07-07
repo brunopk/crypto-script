@@ -1,9 +1,9 @@
-abstract class BaseFormHandler<T extends Form.Data> implements Form.Handler {   
-  private _mapping: Form.ColumnMapping<T>
+abstract class BaseFormHandler<T extends FormSheet> implements FormHandler {   
+  private _mapping: ColumnMapping<T>
 
   private _snapshot: Snapshot
 
-  constructor(mapping: Form.ColumnMapping<T>) {
+  constructor(mapping: ColumnMapping<T>) {
     this._mapping = mapping
     this._snapshot = getLastSnapshot()
   }

@@ -18,7 +18,7 @@ function addRow(spreadSheetId: string, sheetName: string, row: any[]): number {
  * @param mapping indicates to which column is associated each field 
  * @returns Returns an object `data` for which `data[field]` contains the value for `field` in column `n` (being `mapping[field] = n`).
  */
-function getLastRow<T extends Form.Data>(mapping: Form.ColumnMapping<T>): object {
+function getLastRow<T extends RowDefinition>(mapping: ColumnMapping<T>): object {
   const data = {}
   const range = SpreadsheetApp.getActiveRange()
   for (let field in mapping) {

@@ -1,4 +1,17 @@
-declare let FormHandler: { [associatedSheetName: string]: Form.Handler }
+declare namespace ExternalAPIs {
+  namespace CoinAPI {
+    namespace ExchangeRate {
+      type GetSpecificRateResponse = {
+        time: string,
+        asset_id_base: string,
+        asset_id_quote: string,
+        rate: number
+      }
+    }
+  }
+}
+
+declare let FormHandler: { [associatedSheetName: string]: FormHandler }
 
 declare let CHARS: string
 
@@ -12,19 +25,14 @@ declare enum Coin {
   ETH = "ETH"
 }
 
-declare namespace Form {
+type FormSheet = RowDefinition
 
-  type ColumnMapping<T> = {
-    [Property in keyof T]: number
-  }
+type RowDefinition = {
+  [name: string]: number | string | Date
+}
 
-  type Data = {
-    [field: string]: number | string | Date
-  }
-
-  interface Handler {
-    run: () => void
-  }
+type ColumnMapping<T> = {
+  [Property in keyof T]: number
 }
 
 type Snapshot = {
@@ -52,26 +60,6 @@ type Snapshot = {
   }
 }
 
-declare namespace Main {
-  
-  namespace Sheets {
-    type RowDef = {
-      [column: string]: {
-        columnName: string
-        columnIndex: number
-      }
-    }
-  }
-  namespace ExternalAPIs {
-    namespace CoinAPI {
-      namespace ExchangeRate {
-        type GetSpecificRateResponse = {
-          time: string,
-          asset_id_base: string,
-          asset_id_quote: string,
-          rate: number
-        }
-      }
-    }
-  }
+interface FormHandler {
+  run: () => void
 }
