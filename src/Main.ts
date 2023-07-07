@@ -1,11 +1,10 @@
+CHARS = "ABCDEFGHIJKLMNOPQRSTUVYXZ"
+
 const BALANCE_SHEET = "Balance"
 
 const STABLE_COIN_BUSD = "BUSD"
 const STABLE_COIN_USDT = "USDT"
 const STABLE_COINS = [STABLE_COIN_BUSD, STABLE_COIN_USDT]
-
-const COIN_ADA = "ADA"
-const AVAILABLE_COINS = [STABLE_COIN_BUSD, STABLE_COIN_USDT, COIN_ADA]
 
 const TEMPLATE_ACTION_BUSD_BUY = "Compra de %Q1% BUSD (%F1% USD de fee)."
 const TEMPLATE_ACTION_USDT_BUY = "Compra de %Q1% USDT (%F1% USD de fee)."
@@ -44,11 +43,6 @@ function updateBalanceSheet(date, action, invested = 0) {
   console.log(`New row added on '${BALANCE_SHEET}' sheet.`)
 
   throw new Error('Continue implementation, calculate balance')
-}
-
-function getPrice(coin, date) {
-  console.log('Not implemented correctly')
-  return 2
 }
 
 /****************************************/
@@ -134,24 +128,13 @@ function processInsertedRowOnSwapSheet() {
 
 /********************************/
 
-function processInsertedRow() {
+function main() {
   const sheet = SpreadsheetApp.getActiveSheet()
   const sheetName = sheet.getName()
-  
-  console.log(`New row inserted on sheet '${sheetName}'.`)
-  console.log('Main')
 
-  switch(sheetName) {
-    case "Swap":
-      processInsertedRowOnSwapSheet()
-      break;
-    case "Movimiento":
-      processInsertedRowOnMovementsSheet()
-      break;
-    case "Compra":
-      processInsertedRowOnBuySheet()
-      break;
-    default:
-      throw new Error(`This script won't process rows inserted on sheet '${sheetName}'.`)
-  }
+  if (!(sheetName in Object.keys(FormHandler)))
+    throw new Error(`There's no handler defined to process inserted rows on sheet '${sheetName}'`)
+
+  FormHandler[sheetName].run()
+  // console.log(readLastInsertedRow({money: 3, quantity: 4}))
 }
