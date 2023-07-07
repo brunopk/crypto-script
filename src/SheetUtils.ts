@@ -1,8 +1,8 @@
 /**
  * Adds a new row on a given sheet within a given spread sheet.
- * @param spreadSheetId spread sheet id that can be found on the spread sheet URL
+ * @param spreadSheetId spread sheet id (it can be obtained from the spread sheet URL)
  * @param sheetName sheet name within the spread sheet to which the row will be added
- * @param row row data with all columns (some columns could be just empty strings "")
+ * @param row an array with all cell values in order
  * @returns The number of the added row.
  */
 function addRow(spreadSheetId: string, sheetName: string, row: any[]): number {
@@ -14,11 +14,14 @@ function addRow(spreadSheetId: string, sheetName: string, row: any[]): number {
 }
 
 /**
- * Read the last inserted row in the active sheet.
+ * Read the last inserted row in a given sheet within a given spread sheet.
+ * @param spreadSheetId spread sheet id (it can be obtained from the spread sheet URL)
+ * @param sheetName sheet name within the spread sheet to which the row will be added
  * @param mapping indicates to which column is associated each field 
  * @returns Returns an object `data` for which `data[field]` contains the value for `field` in column `n` (being `mapping[field] = n`).
  */
-function getLastRow<T extends RowDefinition>(mapping: ColumnMapping<T>): object {
+function getLastRow<T extends RowDefinition>(spreadSheetId: string, sheetName: string, mapping: ColumnMapping<T>): object {
+  // TODO: use parameters spreadSheetId: string, sheetName: string
   const data = {}
   const range = SpreadsheetApp.getActiveRange()
   for (let field in mapping) {
